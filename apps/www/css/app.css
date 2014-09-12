@@ -1,0 +1,439 @@
+html, body {
+  overflow-y: auto;
+}
+
+#left-drawer .switch-lang > a {
+  text-align: center;
+}
+
+#left-drawer .flag {
+  width: 32px;
+  height: 32px;
+}
+
+#left-drawer .switch-lang > a:first-child {
+  max-width: 50%;
+  width: 100%;
+  float: left;
+}
+
+#searchForm .search-box {
+	padding: 20px;
+  padding-top: 5px;
+	color: #333;
+}
+
+#searchForm .search-box .btn {
+	background-color: #353535;
+	color: #fff;
+}
+
+#searchForm .search-box .btn:active,  #searchForm .search-box .btn:focus  {
+	background-color: #333;
+}
+
+#header {
+  border: 0;
+  position: static;
+  -webkit-backface-visibility:visible;
+  backface-visibility:visible;
+}
+
+#app-content {
+  position: relative;
+  text-align: center;
+
+  transform: translate3d(0,-50px,0);
+  -webkit-transform: translate3d(0,-50px,0);
+
+  transition: transform 0.3s ease-in;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+
+  overflow-y: auto;
+}
+
+#app-content:not(.loadmore) .view {
+  overflow-y: auto;
+}
+
+#app-content.loading, #app-content.refresh, #app-content.loadmore {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+#app-content.loading .citation-wrapper {
+  opacity: 0;
+}
+
+#app-content .refresh-banner, #app-content .loadmore-banner, #app-content .error-banner {
+  width:100%;
+  height: 50px;
+  background-color: #fff;
+  color:#333;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#app-content .error-banner, #app-content.loadmore .loadmore-banner {
+  display: block;
+  position: absolute;
+  border: 0;
+  opacity: 0;
+
+  transition: transform, opacity 0.5s ease-out;
+  -webkit-transition: -webkit-transform, opacity 0.5s ease-out;
+
+  z-index: 100;
+}
+
+#app-content .loadmore-banner {
+  display: none;
+}
+
+#app-content.loadmore .loadmore-banner {
+  display: block;
+  opacity: 1;
+}
+
+#app-content .error-banner {
+  color: #fff;
+  left: 0;
+  top: 0;
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+
+  background-color: #428bca;
+}
+
+#app-content .error-banner.shown {
+
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+
+  opacity: 1;
+
+}
+
+#app-content .refresh-banner button.close, #app-content .loadmore-banner button.close, #app-content .error-banner button.close {
+  display: none;
+}
+
+#app-content .refresh-banner .spinner {
+  font-size: 30px;
+  color: #333;
+}
+
+#app-content .citation-wrapper:not(.loaded) .spinner,
+#app-content.refresh .refresh-banner .spinner,
+#app-content.loading .refresh-banner .spinner,
+#app-content.loadmore .loadmore-banner .spinner {
+
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  display: inline-block;
+}
+
+#app-content .citation-wrapper {
+  position: relative;
+	height: 100%;
+	max-height: 463px;
+	margin-bottom: 20px;
+  margin-top: 10px;
+  transition: opacity 0.5s ease-out;
+  -webkit-transition: opacity 0.5s ease-out;
+  background-color: transparent;
+}
+
+#app-content .citation-wrapper .spinner {
+  display: block;
+  visibility: visible;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin-left: -12px;
+}
+
+#app-content .citation-wrapper.loaded {
+	height: auto;
+}
+
+#app-content .citation-wrapper.loaded .spinner {
+  display: none;
+  visibility: hidden;
+}
+
+#app-content .citation-wrapper .actions {
+	background-color: transparent;
+	text-align: left;
+	color: #fff;
+	font-size:1.3em;
+	font-weight: bold;
+}
+
+#app-content .citation-wrapper:not(.loaded) .actions {
+  opacity: 0.5;
+}
+
+#app-content .citation-wrapper .actions .primary, #app-content .citation-wrapper .actions .secondary {
+	height: 30px;
+  color: #444;
+}
+
+#app-content .citation-wrapper .actions button {
+	background-color: #e3e3e3;
+	color: #333;
+	height: 30px;
+
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+
+  border: 1px solid #e3e3e3;
+
+  float: left;
+}
+
+#app-content .citation-wrapper .actions .vote,
+#app-content .citation-wrapper .actions .score,
+#app-content .citation-wrapper .actions .download {
+	padding: 0 3px;
+  margin-right: 5px;
+}
+
+#app-content .citation-wrapper .actions .download {
+  float:right;
+}
+
+#app-content .citation-wrapper .actions .share {
+  float: right;
+  font-weight: 300;
+}
+
+#app-content .citation-wrapper .actions .score {
+  float: left;
+	line-height: 1.3;
+}
+
+#app-content .citation-wrapper .actions button .icon, #app-content .citation-wrapper .actions button .app-icon {
+	font-weight: bold;
+	transition: color 0.3s ease-out;
+	-webkit-transition: color 0.3s ease-out;
+	-moz-transition: color 0.3s ease-out;
+	-ms-transition: color 0.3s ease-out;
+	-o-transition: color 0.3s ease-out;
+	font-size: 2em;
+}
+
+#app-content .citation-wrapper .actions button.active {
+	color: #c00;
+}
+
+#app-content .citation {
+	background-position: 50%;
+	width: 100%;
+	max-height: 400px;
+	height:100%;
+}
+
+#app-content .citation-wrapper, #app-content .citation-wrapper.loaded .citation {
+	max-width: 280px;
+	width: 100%;
+	display: inline-block;
+}
+
+#app-content .citation-wrapper.loaded .citation {
+	background-color: transparent;
+	height: auto;
+}
+
+@media screen and (max-height: 240px) {
+	#app-content .citation {
+		max-width: 160px;
+	}
+}
+
+#app-content .view.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+
+
+/* FONTS */
+
+/*
+   Animation example, for spinners
+
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  display: inline-block;
+*/
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-ms-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@font-face {
+  font-family: 'wolfstack03';
+  src: url('../fonts/wolfstack03.eot?63215054');
+  src: url('../fonts/wolfstack03.eot?63215054#iefix') format('embedded-opentype'),
+       url('../fonts/wolfstack03.woff?63215054') format('woff'),
+       url('../fonts/wolfstack03.ttf?63215054') format('truetype'),
+       url('../fonts/wolfstack03.svg?63215054#wolfstack02') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?14571073#fontello') format('svg');
+  }
+}
+*/
+
+.ws {
+  font-size: 24px;
+}
+ 
+ [class^="ws-"]:before, [class*=" ws-"]:before {
+  font-family: "wolfstack03";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+
+.ws-comment:before { content: '\e800'; } /* '' */
+.ws-help-circled:before { content: '\e801'; } /* '' */
+.ws-twitter:before { content: '\e802'; } /* '' */
+.ws-facebook:before { content: '\e803'; } /* '' */
+.ws-up-open:before { content: '\e804'; } /* '' */
+.ws-down-open:before { content: '\e805'; } /* '' */
+.ws-spin3:before { content: '\e806'; } /* '' */
+.ws-user:before { content: '\e807'; } /* '' */
+.ws-globe:before { content: '\e808'; } /* '' */
+.ws-spin4:before { content: '\e809'; } /* '' */
+.ws-android:before { content: '\e80a'; } /* '' */
+.ws-apple:before { content: '\e80b'; } /* '' */
+.ws-heart:before { content: '\e80c'; } /* '' */
+.ws-heart-empty:before { content: '\e80d'; } /* '' */
+.ws-thumbs-up:before { content: '\e80e'; } /* '' */
+.ws-info-circled:before { content: '\e80f'; } /* '' */
+.ws-hourglass-1:before { content: '\e810'; } /* '' */
+.ws-hourglass:before { content: '\e811'; } /* '' */
+.ws-mobile:before { content: '\e812'; } /* '' */
+.ws-tablet:before { content: '\e813'; } /* '' */
+.ws-laptop:before { content: '\e814'; } /* '' */
+.ws-desktop:before { content: '\e815'; } /* '' */
+.ws-attention:before { content: '\e816'; } /* '' */
+.ws-ok-circled:before { content: '\e817'; } /* '' */
+.ws-cancel-circled:before { content: '\e818'; } /* '' */
+.ws-bell:before { content: '\e819'; } /* '' */
+.ws-star-empty:before { content: '\e81b'; } /* '' */
+.ws-star:before { content: '\e81a'; } /* '' */
+.ws-download:before { content: '\e81c'; } /* '' */
