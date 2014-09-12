@@ -1,0 +1,18 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "org.devgeeks.Canvas2ImagePlugin": {
+            "PACKAGE_NAME": "co.citations.wolfstack"
+        },
+        "nl.madebymark.share": {
+            "PACKAGE_NAME": "co.citations.wolfstack"
+        }
+    },
+    "dependent_plugins": {}
+}

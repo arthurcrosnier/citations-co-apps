@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimal-ui">
+
+        <link rel="stylesheet" href="css/ratchet.css">
+        <link rel="stylesheet" href="css/ratchet-theme-citations-android.css">
+        <link rel="stylesheet" href="css/snap.css">
+        <link rel="stylesheet" href="css/snap-theme-citations-android.css">
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+    <body>
+
+      <div class="snap-drawers">
+          <div class="snap-drawer snap-drawer-left" id="left-drawer">
+              <ul class="list navigation" role="navigation">
+                <li class="active">
+                  <a href="" data-view="famous-quotes">
+                    <span class="ws ws-comment"></span>
+                    <span class="i18n" data-i18n="famous-quotes"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-view="user-quotes" class="nav-user-quotes">
+                    <span class="ws ws-user"></span>
+                    <span class="i18n" data-i18n="user-quotes"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" data-view="contrib-quotes">
+                    <span class="ws ws-hourglass"></span>
+                    <span class="i18n" data-i18n="contrib-quotes"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" data-view="top-quotes">
+                    <span class="ws ws-star"></span>
+                    <span class="i18n" data-i18n="top-quotes"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" data-view="random-quotes">
+                    <span class="ws ws-help-circled"></span>
+                    <span class="i18n" data-i18n="random-quotes"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="market://details?id=citations.co.quote">
+                    <span class="ws ws-thumbs-up"></span>
+                    <span class="i18n" data-i18n="rate-app"></span>
+                  </a>
+                </li>
+<!--                 <li>
+                  <a href="" data-view="about">
+                    <span class="ws ws-info-circled"></span>
+                    <span class="i18n" data-i18n="about"></span>
+                  </a>
+                </li> -->
+                <li class="switch-lang">
+                  <a href="" data-lang="fr-FR" class="lang">
+                    <img alt="FR" src="img/french-flag.png" class="flag">
+                  </a>
+                  <a href="" data-lang="en-EN" class="lang">
+                    <img alt="FR" src="img/english-flag.png" class="flag">
+                  </a>
+                </li>
+              </ul>
+
+              <p class="drawer-logo">
+              </p>
+
+          </div>
+
+          <div class="snap-drawer snap-drawer-right" id="right-drawer">
+            <form id="searchForm" role="form" data-view="search-quotes">
+
+              <div class="search-box">
+                <input type="search" value="" placeholder="Search Something" required="required" />
+                <button class="btn btn-block">Search <span class="icon icon-search"></span> </button>
+              </div>
+
+            </form>
+            
+          </div>
+      </div>
+    
+      <div id="content" class="snap-content" data-ignore-snap="true">
+
+          <header id="header" class="bar bar-nav">
+            <button role="button" class="btn btn-link btn-nav pull-left" id="toggle-menu-left">
+              <span class="icon icon-bars"></span>
+              Menu
+            </button>
+
+            <button role="button" class="btn btn-link btn-nav pull-right" id="toggle-menu-right">
+              <span class="icon icon-search"></span>
+            </button>
+
+            <h1 class="title">
+              Citations.co
+            </h1>
+          </header>
+
+          <div class="content">
+            <div id="app-content" class="loading">
+              <div class="refresh-banner">
+                <span class="spinner ws ws-spin4 pull-left"></span>
+                Loading ...
+                <button class="btn icon icon-close pull-right close">
+                </button>
+              </div>
+              <div class="error-banner">
+                <span class="ws-attention pull-left"></span>
+                <span class="error i18n" data-i18n="network-error">
+                  
+                </span>
+                <button class="btn icon icon-close pull-right close">
+                </button>
+              </div>
+
+                <div class="view data-view" id="famous-quotes">
+                </div>
+                <div class="view data-view" id="user-quotes">
+                </div>
+                <div class="view data-view" id="contrib-quotes">
+                </div>
+                <div class="view data-view" id="top-quotes">
+                </div>
+                <div class="view data-view" id="random-quotes">
+                </div>
+                <div class="view data-view" id="search-quotes">
+                </div>
+
+                <div class="view hidden" id="about">
+<!--                   <h3>
+                    Bienvenue sur l'application officielle de Citations.co
+                  </h3>
+                  <hr>
+                  <p>
+                    Vous pouvez proposer en quelques cliques des citations personnelles ou célèbres sur notre site web Citations.co
+                    <br>
+                    Toutes vos citations apparaîtront dans l'onglet "Contributions" !
+                    Les citations ayant reçu un nombre important de vote positif seront mises en avant dans les onglets "Citations célèbre" et "Citations d'utilisateurs" en fonction de la catégorie que vous avez sélectionnée.
+                    </p>
+                    <hr>
+                    Si vous aimez cette application, n'oubliez pas la noter sur le Playstore!
+                    <br>Merci et bonne lecture !
+                    <br>Citations.co - Dealer d'inspiration -->
+                </div>
+
+              <div class="loadmore-banner">
+                <span class="spinner ws ws-spin4 pull-left"></span>
+                Loading ...
+                <button class="btn icon icon-close pull-right close">
+                </button>
+              </div>
+
+
+              <script type="text/html" id="itemsListTemplate">   
+                <% 
+                  if(items.length) {
+                    _.each(items, function(item, index) { 
+                      var itemSrc = '';
+                      if(item.base64src) {
+                        itemSrc = item.base64src;
+                      } else if(item.loaded) {
+                        itemSrc = item.src;
+                      }
+                %> 
+                      <div id="<%= viewName+'-'+item.id %>" class="citation-wrapper <%= item.loaded || item.base64src ? 'loaded' : '' %>" >
+                        <img class="citation" alt="" src="<%= itemSrc %>"/>
+                        <span class="spinner ws ws-spin4"></span>
+                        <div class="actions">
+                          <div class="primary">
+                            <button role="button" class="vote <%= item.vote === 0 ? 'active' : '' %>" data-vote="0" data-citation-id="<%= item.id %>" data-citation-id="<%= item.id %>">
+                              <span class="ws ws-down-open">
+                              </span>
+                            </button>
+                            <span class="score"><%= item.score %></span>
+                            <button role="button" class="vote <%= item.vote === 1 ? 'active' : '' %>" data-vote="1" data-citation-id="<%= item.id %>">
+                              <span class="ws ws-up-open">
+                              </span>
+                            </button>
+
+                            <button role="button" class="share" data-citation-id="<%= item.id %>">
+                              Share...
+                            </button>
+
+                            <button role="button" class="download" data-citation-id="<%= item.id %>">
+                              <span class="ws ws-download download">
+                              </span>
+                            </button>
+
+
+
+                          </div>
+                        </div>
+                      </div>
+                <%  
+                    });
+                } %>
+
+              </script>
+
+
+
+            </div>
+          </div>
+
+      </div>
+
+
+      <script>
+        if ("document" in self && !("classList" in document.createElement("_"))) { 
+            document.write('<script src="js/vendor/classlist.min.js">\x3C/script>');
+        }
+
+        window.JSON || document.write('<script src="js/vendor/json3.min.js">\x3C/script>');
+
+        !('ontouchstart' in window || 'onmsgesturechange' in window) || document.write('<script src="js/vendor/fastclick.min.js">\x3C/script>');
+      </script>
+      <script src="cordova.js"></script>
+      <script src="js/vendor/underscore-min.js"></script>
+      <script src="js/vendor/sendRequest.js"></script>
+      <script src="js/vendor/domready.js"></script>
+      <script src="js/vendor/snap.js"></script>
+      <script src="js/app.js"></script>
+
+    </body>
+</html>

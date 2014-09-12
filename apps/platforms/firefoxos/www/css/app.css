@@ -1,0 +1,339 @@
+@media screen and (min-height:420px) { 
+	.drawer-logo {
+		height: 100px;
+		width: 100%;
+		background-image: url('../img/logo.png');
+		background-size: 100px 100px;
+		background-repeat: no-repeat;
+	}
+
+	#left-drawer .drawer-logo {
+		background-position: center left;
+	}
+
+	#right-drawer .drawer-logo {
+		background-position: center right;
+	}
+
+}
+
+#searchForm .search-box {
+	padding: 20px;
+	color: #333;
+}
+
+#searchForm .search-box .btn {
+	background-color: #353535;
+	color: #fff;
+}
+
+#searchForm .search-box .btn:active,  #searchForm .search-box .btn:focus  {
+	background-color: #333;
+}
+
+#app-content {
+  text-align: center;
+  height:100%;
+  max-height: 100%;
+  -webkit-transform: translate3d(0,-50px,0);
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transform: translate3d(0,-50px,0);
+  transition: transform 0.3s ease-in 0.3s ease-in;
+}
+
+#app-content.loading, #app-content.refresh {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+#app-content.loading .citation-wrapper {
+  opacity: 0;
+}
+
+#app-content .refresh-banner {
+  width:100%;
+  height: 50px;
+  background-color: #fff;
+  color:#e3e3e3;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#app-content .refresh-banner button.close {
+  display: none;
+}
+
+#app-content .refresh-banner .spinner {
+  font-size: 30px;
+  color: #333;
+}
+
+#app-content .citation-wrapper {
+  position: relative;
+	height: 100%;
+	max-height: 463px;
+	margin-bottom: 20px;
+  margin-top: 10px;
+  transition: opacity 0.5s ease-out;
+  -webkit-transition: opacity 0.5s ease-out;
+}
+
+#app-content .citation-wrapper .spinner {
+  display: block;
+  visibility: visible;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin-left: -12px;
+}
+
+#app-content .citation-wrapper.loaded {
+	height: auto;
+}
+
+#app-content .citation-wrapper.loaded .spinner {
+  display: none;
+  visibility: hidden;
+}
+
+#app-content .citation-wrapper .actions {
+	background-color: #333;
+	border-top: 3px solid #000;
+	border-bottom: 2px solid #000;
+	text-align: center;
+	color: #fff;
+	font-size:1.5em;
+	font-weight: bold;
+}
+
+#app-content .citation-wrapper .actions .primary, #app-content .citation-wrapper .actions .secondary {
+	height: 40px;
+}
+
+#app-content .citation-wrapper .actions button {
+	background-color: #333;
+	color: #fff;
+	border: 0;
+	height: 40px;
+}
+
+#app-content .citation-wrapper .actions button.vote {
+	float: left;
+	padding: 0 20px;
+}
+
+#app-content .citation-wrapper .actions .score {
+	line-height: 1.5;
+}
+
+#app-content .citation-wrapper .actions button.vote:last-child {
+	float: right;
+}
+
+#app-content .citation-wrapper .actions button .icon, #app-content .citation-wrapper .actions button .app-icon {
+	font-weight: bold;
+	transition: color 0.3s ease-out;
+	-webkit-transition: color 0.3s ease-out;
+	-moz-transition: color 0.3s ease-out;
+	-ms-transition: color 0.3s ease-out;
+	-o-transition: color 0.3s ease-out;
+	font-size: 2em;
+}
+
+#app-content .citation-wrapper .actions button.active {
+	color: #c00;
+}
+
+#app-content .citation {
+	background-position: 50%;
+	width: 100%;
+	max-height: 400px;
+	height:100%;
+}
+
+#app-content .citation-wrapper, #app-content .citation-wrapper.loaded .citation {
+	max-width: 280px;
+	width: 100%;
+	display: inline-block;
+}
+
+#app-content .citation-wrapper.loaded .citation {
+	background-color: transparent;
+	height: auto;
+}
+
+@media screen and (max-height: 240px) {
+	#app-content .citation {
+		max-width: 160px;
+	}
+}
+
+#app-content .view.hidden {
+  display: none;
+}
+
+
+
+/* FONTS */
+
+/*
+   Animation example, for spinners
+*/
+.animate-spin {
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  display: inline-block;
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-ms-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@font-face {
+  font-family: 'wolfstack02';
+  src: url('../fonts/wolfstack02.eot?63215054');
+  src: url('../fonts/wolfstack02.eot?63215054#iefix') format('embedded-opentype'),
+       url('../fonts/wolfstack02.woff?63215054') format('woff'),
+       url('../fonts/wolfstack02.ttf?63215054') format('truetype'),
+       url('../fonts/wolfstack02.svg?63215054#wolfstack02') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?14571073#fontello') format('svg');
+  }
+}
+*/
+
+.ws {
+  font-size: 24px;
+}
+ 
+ [class^="ws-"]:before, [class*=" ws-"]:before {
+  font-family: "wolfstack02";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.ws-spin4:before { content: '\e805'; } /* '' */
+.ws-thumbs-up:before { content: '\e80a'; } /* '' */
+.ws-star-empty:before { content: '\e809'; } /* '' */
+.ws-info-circled:before { content: '\e80b'; } /* '' */
+.ws-comment:before { content: '\e800'; } /* '' */
+.ws-down-open:before { content: '\e80d'; } /* '' */
+.ws-up-open:before { content: '\e80c'; } /* '' */
+.ws-star:before { content: '\e808'; } /* '' */
+.ws-android:before { content: '\e806'; } /* '' */
+.ws-apple:before { content: '\e807'; } /* '' */
+.ws-facebook:before { content: '\e802'; } /* '' */
+.ws-twitter:before { content: '\e801'; } /* '' */
+.ws-user:before { content: '\e803'; } /* '' */
+.ws-globe:before { content: '\e804'; } /* '' */
+.ws-hourglass:before { content: '\e822'; } /* '' */
+.ws-hourglass-1:before { content: '\e823'; } /* '' */

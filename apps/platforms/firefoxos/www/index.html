@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimal-ui">
+
+        <link rel="stylesheet" href="css/ratchet.css">
+        <link rel="stylesheet" href="css/ratchet-theme-citations-android.css">
+        <link rel="stylesheet" href="css/snap.css">
+        <link rel="stylesheet" href="css/snap-theme-citations-android.css">
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+    <body>
+
+      <div class="snap-drawers">
+          <div class="snap-drawer snap-drawer-left" id="left-drawer">
+              <ul class="list navigation" role="navigation">
+                <li class="active">
+                  <a href="" data-view="famous-quotes">
+                    <span class="ws ws-comment"></span>
+                    Citations Celebres
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-view="user-quotes" class="nav-user-quotes">
+                    <span class="ws ws-user"></span>
+                    Citations des utilisateurs
+                  </a>
+                </li>
+                <li>
+                  <a href="" data-view="contrib-quotes">
+                    <span class="ws ws-hourglass"></span>
+                    Contributions
+                  </a>
+                </li>
+                <li>
+                  <a href="" data-view="top-quotes">
+                    <span class="ws ws-star"></span>
+                    Top
+                  </a>
+                </li>
+                <li>
+                  <a href="" data-view="search-quotes">
+                    <span class="ws ws-thumbs-up"></span>
+                    Noter l'application
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <span class="ws ws-info-circled"></span>
+                    Info
+                  </a>
+                </li>
+              </ul>
+
+              <p class="drawer-logo">
+              </p>
+
+          </div>
+
+          <div class="snap-drawer snap-drawer-right" id="right-drawer">
+            <form id="searchForm" role="form" data-view="search-quotes">
+
+            <div class="search-box">
+              <input type="search" value="" placeholder="Search Something" required="required" />
+              <button class="btn btn-block">Search <span class="icon icon-search"></span> </button>
+            </div>
+
+            </form>
+              
+            </div>
+
+
+            <p class="drawer-logo">
+            </p>
+          </div>
+      </div>
+    
+      <div id="content" class="snap-content" data-ignore-snap="true">
+
+          <header id="header" class="bar bar-nav">
+            <button role="button" class="btn btn-link btn-nav pull-left" id="toggle-menu-left">
+              <span class="icon icon-bars"></span>
+              Menu
+            </button>
+
+            <button role="button" class="btn btn-link btn-nav pull-right" id="toggle-menu-right">
+              <span class="icon icon-search"></span>
+            </button>
+
+            <h1 class="title">
+              Citations.co
+            </h1>
+          </header>
+
+          <div class="content">
+            <div id="app-content" class="loading">
+              <div class="refresh-banner">
+                <span class="spinner ws ws-spin4 animate-spin pull-left"></span>
+                Loading ...
+                <button class="btn icon icon-close pull-right close">
+                </button>
+              </div>
+
+                <div class="view" id="famous-quotes">
+                </div>
+                <div class="view" id="user-quotes">
+                </div>
+                <div class="view" id="contrib-quotes">
+                </div>
+                <div class="view" id="top-quotes">
+                </div>
+                <div class="view" id="search-quotes">
+                </div>
+
+
+              <script type="text/html" id="itemsListTemplate">   
+                <% 
+                  if(items.length) {
+                    _.each(items, function(item, index) { 
+                %> 
+                      <div id="<%= viewName+'-'+item.id %>" class="citation-wrapper <%= item.loaded ? 'loaded' : '' %>" >
+                        <img class="citation" alt="" src="<%= item.loaded ? item.src : '' %>"/>
+                        <span class="spinner ws ws-spin4 animate-spin"></span>
+                        <div class="actions">
+                          <div class="primary">
+                            <button role="button" class="vote <%= item.vote === 0 ? 'active' : '' %>" data-vote="0" data-citation-id="<%= item.id %>" data-citation-id="<%= item.id %>">
+                              <span class="ws ws-down-open">
+                              </span>
+                            </button>
+                            <span class="score"><%= item.score %></span>
+                            <button role="button" class="vote <%= item.vote === 1 ? 'active' : '' %>" data-vote="1" data-citation-id="<%= item.id %>">
+                              <span class="ws ws-up-open">
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                <%  
+                    });
+                } else { 
+                %> 
+                  Sorry. 
+                <% } %>
+
+              </script>
+
+
+
+            </div>
+          </div>
+
+      </div>
+
+
+      <script>
+        if ("document" in self && !("classList" in document.createElement("_"))) { 
+            document.write('<script src="js/vendor/classlist.min.js">\x3C/script>');
+        }
+
+        window.JSON || document.write('<script src="js/vendor/json3.min.js">\x3C/script>');
+
+        !('ontouchstart' in window || 'onmsgesturechange' in window) || document.write('<script src="js/vendor/fastclick.min.js">\x3C/script>');
+      </script>
+      <script src="cordova.js"></script>
+      <script src="js/vendor/underscore-min.js"></script>
+      <script src="js/vendor/sendRequest.js"></script>
+      <script src="js/vendor/domready.js"></script>
+      <script src="js/vendor/snap.js"></script>
+      <script src="js/app.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,35 @@
+#content {
+  background-color: #fff;
+}
+
+.snap-drawer ul {
+  padding:0;
+  margin:0;
+  list-style-type: none;
+}
+
+.snap-drawer {
+  color: #eee;
+  background-color: #000;
+}
+
+.snap-drawer li > a {
+  display: block;
+  border-bottom: 1px solid rgba(0,0,0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  font-size: 0.9em;
+  font-weight: 200;
+  text-shadow: 0 1px 0 #000;
+  text-decoration: none;
+  color: #eee;
+  background-color: #333;
+}
+
+.snap-drawer li > a .icon, .snap-drawer li > a .app-icon {
+  margin-right: 10px;
+}
+
+.snap-drawer li.active > a {
+  background-color: #E44A4A;
+}
